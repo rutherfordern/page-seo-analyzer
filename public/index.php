@@ -27,7 +27,6 @@ $app->add(MethodOverrideMiddleware::class);
 session_start();
 
 $router = $app->getRouteCollector()->getRouteParser();
-
 $pdo = DataBase::getInstance();
 
 
@@ -54,8 +53,7 @@ $app->post('/urls', function ($request, $response) use ($pdo, $router) {
     $validator->rule('url', 'website');
     $errors = $validator->errors();
 
-    if ($validator->validate() && !empty($url['name']))
-    {
+    if ($validator->validate() && !empty($url['name'])) {
         $name = $url['name'];
 
         $saveAndGetFlashMessage = $pdo->saveDataBaseTableUrl($name);

@@ -11,17 +11,11 @@ class CheckUrl
     private $response;
     private Document $document;
 
-
     public function __construct($url)
     {
         $this->client = new Client(['verify' => false]);
         $this->response = $this->client->get($url);
         $this->document = new Document($url, true);
-    }
-
-    public function getStatusCodeUrl(): int
-    {
-        return $this->response->getStatusCode();
     }
 
     public function getAllCheckElements(): array
@@ -34,6 +28,11 @@ class CheckUrl
             'title' => substr($this->getTitle(),0, $maxStrLength),
             'description' => substr($this->getDescription(),0, $maxStrLength),
         ];
+    }
+
+    public function getStatusCodeUrl(): int
+    {
+        return $this->response->getStatusCode();
     }
 
     public function getH1element(): string
