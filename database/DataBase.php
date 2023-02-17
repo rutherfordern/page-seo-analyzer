@@ -114,8 +114,8 @@ class DataBase
 
     public function getCheckUrlShow(int $id): bool|array
     {
-        return $this->connectDataBase()->query("SELECT * FROM url_checks WHERE url_id = '$id' ORDER BY created_at DESC")
-            ->fetchAll(\PDO::FETCH_ASSOC);
+        $query = 'SELECT * FROM url_checks WHERE url_id = :id ORDER BY created_at DESC';
+        return $this->makeQueryDataBase($query, ['id' => $id], false, true);
     }
 
     private function isInUrlDataBase(string $name): bool
