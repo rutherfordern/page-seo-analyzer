@@ -1,18 +1,15 @@
 ## Описание
----
 [![Maintainability](https://api.codeclimate.com/v1/badges/dc592ba08875058f14ec/maintainability)](https://codeclimate.com/github/rutherfordern/page-seo-analyzer/maintainability)
 
-Анализатор страниц - веб-приложение на базе фреймворка Slim, которое позволяет узнать код HTTP-ответа, содержимое элементов h1, title и метатега description указанной страницы.
+**Анализатор страниц** - веб-приложение на базе фреймворка **Slim**, которое позволяет узнать код HTTP-ответа, содержимое элементов h1, title и метатега description указанной страницы.
 
 Для работы с базой данных используется PDO. СУБД - PostgreSQL. 
 Фронтенд - Bootstrap.
 ## Требования
----
 - PHP >= 8.1
 - Composer
 
 ## Установка для локальной работы
----
 1. Склонируйте проект, затем выполните установку.
 ```sh
 make install
